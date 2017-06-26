@@ -1113,7 +1113,7 @@ kmi = km.keymap_items.new('graph.select_all_toggle', 'SELECTMOUSE', 'DOUBLE_CLIC
 # Map Clip Editor
 km = kc.keymaps.new('Clip Editor', space_type='CLIP_EDITOR', region_type='WINDOW', modal=False)
 
-kmi = km.keymap_items.new('clip.view_pan', 'MIDDLEMOUSE', 'PRESS', any=True)
+kmi = km.keymap_items.new('clip.view_pan', 'MIDDLEMOUSE', 'PRESS')
 kmi = km.keymap_items.new('clip.view_pan', 'MIDDLEMOUSE', 'PRESS', shift=True)
 kmi = km.keymap_items.new('clip.view_pan', 'TRACKPADPAN', 'ANY')
 kmi = km.keymap_items.new('clip.view_zoom', 'RIGHTMOUSE', 'PRESS', alt=True)
