@@ -13,6 +13,42 @@ def kmi_props_setattr(kmi_props, attr, value):
 wm = bpy.context.window_manager
 kc = wm.keyconfigs.new(os.path.splitext(os.path.basename(__file__))[0])
 
+# Map Screen
+km = kc.keymaps.new('Screen', space_type='EMPTY', region_type='WINDOW', modal=False)
+
+kmi = km.keymap_items.new('screen.animation_step', 'TIMER0', 'ANY', any=True)
+kmi = km.keymap_items.new('screen.region_blend', 'TIMERREGION', 'ANY', any=True)
+kmi = km.keymap_items.new('screen.screen_set', 'RIGHT_ARROW', 'PRESS', ctrl=True)
+kmi_props_setattr(kmi.properties, 'delta', 1)
+kmi = km.keymap_items.new('screen.screen_set', 'LEFT_ARROW', 'PRESS', ctrl=True)
+kmi_props_setattr(kmi.properties, 'delta', -1)
+kmi = km.keymap_items.new('screen.screen_full_area', 'SPACE', 'PRESS')
+kmi = km.keymap_items.new('screen.screenshot', 'F3', 'PRESS', ctrl=True)
+kmi = km.keymap_items.new('screen.screencast', 'F3', 'PRESS', alt=True)
+kmi = km.keymap_items.new('screen.region_quadview', 'SPACE', 'PRESS', shift=True)
+kmi = km.keymap_items.new('screen.repeat_history', 'F3', 'PRESS')
+kmi = km.keymap_items.new('screen.region_flip', 'TAB', 'PRESS', ctrl=True)
+kmi = km.keymap_items.new('screen.redo_last', 'F6', 'PRESS')
+kmi = km.keymap_items.new('screen.frame_jump', 'COMMA', 'PRESS')
+kmi_props_setattr(kmi.properties, 'end', False)
+kmi = km.keymap_items.new('screen.frame_jump', 'PERIOD', 'PRESS')
+kmi_props_setattr(kmi.properties, 'end', True)
+kmi = km.keymap_items.new('script.reload', 'F8', 'PRESS')
+kmi = km.keymap_items.new('file.execute', 'RET', 'PRESS')
+kmi = km.keymap_items.new('file.execute', 'NUMPAD_ENTER', 'PRESS')
+kmi = km.keymap_items.new('file.cancel', 'ESC', 'PRESS')
+kmi = km.keymap_items.new('ed.undo', 'Z', 'PRESS', ctrl=True)
+kmi = km.keymap_items.new('ed.redo', 'Z', 'PRESS', shift=True, ctrl=True)
+kmi = km.keymap_items.new('ed.undo_history', 'Z', 'PRESS', ctrl=True, alt=True)
+kmi = km.keymap_items.new('render.render', 'F12', 'PRESS')
+kmi = km.keymap_items.new('render.render', 'F12', 'PRESS', ctrl=True)
+kmi_props_setattr(kmi.properties, 'animation', True)
+kmi = km.keymap_items.new('render.render', 'BUTTON4MOUSE', 'PRESS')
+kmi = km.keymap_items.new('render.view_cancel', 'ESC', 'PRESS')
+kmi = km.keymap_items.new('render.view_show', 'F11', 'PRESS')
+kmi = km.keymap_items.new('render.play_rendered_anim', 'F5', 'PRESS')
+kmi = km.keymap_items.new('screen.userpref_show', 'U', 'PRESS', ctrl=True, alt=True)
+
 # Map Gesture Border
 km = kc.keymaps.new('Gesture Border', space_type='EMPTY', region_type='WINDOW', modal=True)
 
