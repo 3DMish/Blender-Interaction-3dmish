@@ -243,6 +243,7 @@ kmi = km.keymap_items.new('transform.translate', 'W', 'PRESS', shift=True)
 kmi_props_setattr(kmi.properties, 'constraint_axis', [True, True, True])
 kmi = km.keymap_items.new('transform.rotate', 'E', 'PRESS', shift=True)
 kmi = km.keymap_items.new('transform.resize', 'R', 'PRESS', shift=True)
+kmi = km.keymap_items.new('view3d.walk', 'V', 'PRESS', shift=True)
 
 # Map Object Mode
 km = kc.keymaps.new('Object Mode', space_type='EMPTY', region_type='WINDOW', modal=False)
